@@ -586,6 +586,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 72px;
 }
 
@@ -652,11 +653,6 @@ input {
 }
 
 @media (min-width: 768px) {
-  .team-container {
-    padding-left: 108px;
-    padding-right: 108px;
-  }
-
   .team-list {
     display: flex;
     flex-direction: row;
@@ -666,7 +662,7 @@ input {
     row-gap: 64px;
   }
   .team-item {
-    width: calc((100% - 24px) / 2);
+    max-width: calc((100% - 24px) / 2);
   }
 }
 
@@ -676,15 +672,7 @@ input {
     padding-bottom: 120px;
   }
 
-  .team-container {
-    padding: 0 15px;
-  }
-
-  .team-list {
-    gap: 24px;
-  }
-
   .team-item {
-    width: calc((100% - 3 * 24px) / 4);
+    max-width: calc((100% - 3 * 24px) / 4);
   }
 }
