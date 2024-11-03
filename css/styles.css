@@ -224,7 +224,6 @@ input {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateY(-100%);
 }
 
 .mobile-menu {
