@@ -383,7 +383,7 @@ input {
 }
 @amedia (min-resolution: 192dpi) {
   .hero-section {
-    background-image: url(../images/mobile/mobile_hero2x.jpg);
+    background-image: url(../images/mobile/mobile_hero@2x.jpg);
   }
 }
 
@@ -454,7 +454,7 @@ input {
   }
   @amedia (min-resolution: 192dpi) {
     .hero-section {
-      background-image: url(../images/tablet/tablet-hero2x.jpg);
+      background-image: url(../images/tablet/tablet-hero@2x.jpg);
     }
   }
 }
@@ -482,7 +482,7 @@ input {
   }
   @amedia (min-resolution: 192dpi) {
     .hero-section {
-      background-image: url(../images/desktop/desktop-hero2x.jpg);
+      background-image: url(../images/desktop/desktop-hero@2x.jpg);
     }
   }
 }
@@ -707,6 +707,7 @@ input {
 
 .portfolio-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 48px;
 }
@@ -726,6 +727,7 @@ input {
 .portfolio-box-img {
   position: relative;
   overflow: hidden;
+  width: 288px;
 }
 
 .portfolio-text-overlay {
@@ -777,9 +779,18 @@ input {
   .portfolio-item {
     width: calc((100% - 24px)) / 2;
   }
+
+  .portfolio-box-img {
+    width: 356px;
+  }
 }
 
 @media (min-width: 1158px) {
+  .portfolio-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
   .portfolio-list {
     justify-content: center;
     column-gap: 24px;
@@ -797,9 +808,8 @@ input {
       0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
   }
 
-  .portfolio-section {
-    padding-top: 100px;
-    padding-bottom: 100px;
+  .portfolio-box-img {
+    width: 360px;
   }
 }
 
