@@ -260,10 +260,21 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-btm-close:hover {
+  background-color: #404bbf;
+  border: none;
 }
 
 .mobile-close-svg {
   fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-btm-close:hover .mobile-close-svg {
+  fill: #fff;
 }
 
 .mobile-nav {
@@ -1250,8 +1261,5 @@ input {
 
   .modal-input {
     padding-left: 38px;
-  }
-
-  .modal-checkbox-desc {
   }
 }
