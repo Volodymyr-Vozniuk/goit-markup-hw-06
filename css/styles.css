@@ -96,7 +96,7 @@ input {
   text-transform: uppercase;
   color: #2e2f42;
   padding-top: 16px;
-  padding: 16px;
+  padding-bottom: 16px;
   display: block;
 }
 
@@ -111,14 +111,14 @@ input {
 
 .header-burger-btn {
   fill: #2f2f37;
-  display: block;
+  display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   background-color: transparent;
   margin-left: auto;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-burger-btn:hover,
@@ -220,12 +220,6 @@ input {
 
 /* ------------------Burger-Menu----------------------- */
 
-.mobile-menu.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -236,7 +230,16 @@ input {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .mobile-menu-container {
@@ -432,6 +435,7 @@ input {
     padding-top: 112px;
     padding-bottom: 112px;
   }
+
   .hero-title {
     font-size: 56px;
     line-height: 1.07;
@@ -439,6 +443,7 @@ input {
     margin-bottom: 32px;
     max-width: 496px;
   }
+
   .hero-section {
     background-image: linear-gradient(
         to bottom,
@@ -446,12 +451,9 @@ input {
         rgba(46, 47, 66, 0.7)
       ),
       url(../images/tablet/tablet-hero1x.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     max-width: 768px;
-    margin: 0 auto;
   }
+
   @amedia (min-resolution: 192dpi) {
     .hero-section {
       background-image: url(../images/tablet/tablet-hero@2x.jpg);
@@ -474,11 +476,7 @@ input {
         rgba(46, 47, 66, 0.7)
       ),
       url(../images/desktop/desktop-hero1x.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     max-width: 1440px;
-    margin: 0 auto;
   }
   @amedia (min-resolution: 192dpi) {
     .hero-section {
@@ -928,7 +926,8 @@ input {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
-
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  opacity: 0.3;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -950,11 +949,10 @@ input {
   color: #fff;
   padding: 8px 24px;
   display: flex;
-  justify-content: center;
   align-items: center;
   border-radius: 4px;
   border: none;
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   background-color: #4d5ae5;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1026,6 +1024,10 @@ input {
     margin-right: 3px;
     margin-left: auto;
   }
+
+  .footer-input {
+    opacity: 1;
+  }
 }
 
 /* ----------------modal----------------- */
@@ -1048,6 +1050,10 @@ input {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+.backdrop:not(.is-open) .modal {
+  transform: translate(-50%, -100%);
 }
 
 .modal {
@@ -1240,8 +1246,6 @@ input {
   line-height: 1.5;
   letter-spacing: 0.04em;
   display: block;
-  text-align: center;
-  justify-content: center;
   color: #fff;
   border-radius: 4px;
   min-width: 169px;
